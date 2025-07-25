@@ -1,0 +1,192 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Titulares centrados */
+h1, h3, h4, .mati h3 strong {
+  text-align: center;
+}
+
+h1, .mati h3 strong {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin: 5px 0 20px;
+}
+
+/* MENÚ - Formato de hamburguesa */
+.menu {
+  display: none; /* oculto por defecto para usar JS luego */
+  flex-direction: column;
+  background-color: #333;
+  padding: 10px;
+  list-style: none;
+}
+
+.menu p {
+  color: white;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+}
+
+.menu p:hover {
+  background-color: #555;
+}
+
+/* Carrusel en línea */
+#port-folio {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.carrusel {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.carrusel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botón SUMATE */
+.boton {
+  background-color: yellow;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 30px auto;
+  border-radius: 5px;
+}
+
+.boton:hover {
+  background-color: black;
+  color: yellow;
+}
+
+/* MATI - Título centrado y enlaces en grid */
+.mati h3 strong {
+  display: block;
+  font-size: 2.5rem;
+  margin: 30px 0;
+}
+
+.colaboradores {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.colaboradores a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  transition: background-color 0.3s;
+}
+
+.colaboradores a:hover {
+  background-color: #e0e0e0;
+}
+
+/* LA HUELLA - Datos en fila, texto ordenado */
+.Lahuella {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.Lahuella ul {
+  list-style: none;
+  text-align: center;
+}
+
+.Lahuella h6 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Lahuella h5 {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Footer */
+.disclaimer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px;
+  display: block;
+}
+
+/* Mostrar el menú cuando se activa */
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: #222;
+  padding: 10px;
+  width: 200px;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.menu p {
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menu p:hover {
+  background-color: #333;
+}

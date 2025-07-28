@@ -16,50 +16,59 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   </head>
-  <!-- Página hecha 100% con inteligencia artesanal :D analsheeeee -->
-  <header>
-    <a href="home.html"><h1>Cooperativa La Juanita</h1> </a>
-    <h3>"Un faro de dignidad"</h3>
-    <h4>23 años iluminandote el camino pedazo de puta</h4>
+  <!-- Página hecha 100% con inteligencia artesanal :D anasheeeee -->
+<header class="header">
+  <div class="header-top">
+    <a href="home.html"><h1>Cooperativa La Juanita</h1></a>
+    <button class="hamburger" onclick="toggleMenu()">☰  Menú</button>
+  </div>
+  <h3>"Un faro de dignidad"</h3>
+  <h4>23 años iluminándote el camino.</h4>
 
-    <section class="menu-section">
-      <div class="container">
-        <div class="row">
-          <div class="navbar-collapse collapse">
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-            <nav class="menu" id="menu">
-              <p>NUESTRA HISTORIA</p>
-              <p>EMPRENDIMIENTOS</p>
-              <p>HISTORIAS QUE INSPIRAN</p>
-              <p>DONDE ESTAMOS</p>
-            </nav>
-          </div>
+  <section class="menu-section">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-collapse collapse">
+          <nav class="menu" id="menu">
+            <a href="../vistas/menu/Nuestra historia.html">NUESTRA HISTORIA</a>
+            <a href="../vistas/menu/Emprendimientos.html">EMPRENDIMIENTOS</a>
+            <a href="../vistas/menu/Historias que inspiran.html">HISTORIAS QUE INSPIRAN</a>
+            <a href="../vistas/menu/Donde estamos.html">DÓNDE ESTAMOS</a>
+          </nav>
         </div>
       </div>
-    </section>
-  </header>
+    </div>
+  </section>
+</header>
 
   <div class="just-sec" id="port-folio">
-    <div class="carrusel">
-      <a class="carrusel-foto"> <img src="#" alt="foto" /> </a>
-    </div>
-    <div class="carrusel">
-      <a class="carrusel-foto"> <img src="#" alt="foto" /> </a>
-    </div>
-    <div class="carrusel">
-      <a class="carrusel-foto"> <img src="#" alt="foto" /> </a>
-    </div>
-    <div class="carrusel">
-      <a class="carrusel-foto"> <img src="#" alt="foto" /> </a>
-    </div>
-    <div class="carrusel">
-      <a class="carrusel-foto"> <img src="#" alt="foto" /> </a>
-    </div>
+  <div class="carrusel-contenedor">
+  <div class="carrusel-fotos" id="carruselFotos">
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
+    <div class="carrusel"><img src="../img/sample1.webp" alt="foto" /></div>
   </div>
 
-  <section class="sumate">
-    <button class="boton" href="#">SUMATE</button>
-  </section>
+  <!-- Botones -->
+  <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">⟨</button>
+  <button class="carrusel-btn next" onclick="moverCarrusel(1)">⟩</button>
+  <div class="carrusel-indicadores" id="carruselIndicadores"></div>
+</div>
+</div>
+
+
+<section class="sumate">
+  <a class="boton" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target="_blank">SUMATE</a>
+</section>
 
   <div class="mati">
     <h3><strong>CUANDO CON OTROS SOMOS NOSOTROS</strong></h3>
@@ -76,8 +85,9 @@
     </div>
   </div>
 
+      <h1 class="huella">Nuestra huella</h1>
+      
   <div class="Lahuella">
-    <h1 class="huella">Nuestra huella</h1>
     <ul>
       <h5>empleados</h5>
       <h6>10</h6>

@@ -1,8 +1,20 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+body {
+  background-image: url('../img/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg'); /* Cambiá esta ruta si es necesario */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  color: white; /* blanco o algo claro para contrastar */
 }
 
 /* Titulares centrados */
@@ -13,17 +25,47 @@ h1, h3, h4, .mati h3 strong {
 h1, .mati h3 strong {
   font-size: 2.5rem;
   margin: 20px 0;
+
 }
 
-h3 {
-  font-size: 1.5rem;
-  margin: 10px 0;
+header {
+  background-color: #555;
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 5px;
 }
 
-h4 {
-  font-size: 1.2rem;
-  margin: 5px 0 20px;
+.header-top {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.header-top h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.hamburger {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h3, h4 {
+  text-align: center;
+  margin: 0.2em 0;
+}
+
 
 /* MENÚ - Formato de hamburguesa */
 .menu {
@@ -34,51 +76,112 @@ h4 {
   list-style: none;
 }
 
-.menu p {
+.menu a {
   color: white;
   padding: 10px;
   margin: 0;
   cursor: pointer;
   border-bottom: 1px solid #444;
+  text-align: center;
+  text-decoration: none;
 }
 
-.menu p:hover {
+.menu a:hover {
   background-color: #555;
+  text-decoration: none;
 }
 
-/* Carrusel en línea */
-#port-folio {
+.just-sec {  /* inicio carrusel*/
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel-contenedor {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carrusel-fotos {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
+  transition: transform 0.5s ease-in-out;
+  width: 25.5%; /* 5 imágenes => 100% x 5 */
 }
 
 .carrusel {
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
+  flex: 0 0 100%;
 }
 
 .carrusel img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+ }
+ 
+ /* Botones */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
 }
 
+.carrusel-btn.prev {
+  left: 10px;
+}
+
+.carrusel-btn.next {
+  right: 10px;
+}
+
+.carrusel-indicadores {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carrusel-indicadores span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carrusel-indicadores .activo {
+  background-color: #333;
+}
+
+ /* fin carrusel */
+
 /* Botón SUMATE */
-.boton {
+.sumate .boton {
   background-color: yellow;
   color: black;
   border: none;
   padding: 10px 20px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
   margin: 30px auto;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sumate a{
+  width: 100px;
 }
 
 .boton:hover {
@@ -86,7 +189,7 @@ h4 {
   color: yellow;
 }
 
-/* MATI - Título centrado y enlaces en grid */
+/* MATI - colaboradores Título centrado y enlaces en grid */
 .mati h3 strong {
   display: block;
   font-size: 2.5rem;
@@ -190,3 +293,58 @@ h4 {
 .menu p:hover {
   background-color: #333;
 }
+
+
+h1, h2, h3, h4, h5, h6, p, a {
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* para mayor legibilidad */
+  text-decoration: none;
+}
+
+
+
+    .hist h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .hist p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .container-hist {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .hist h2 {
+      color: #007B55;
+      margin-top: 40px;
+    }
+
+    .container-hist img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .hist footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .hist .contacto {
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    .hist .resaltado {
+      font-weight: bold;
+      color: #007B55;
+    }

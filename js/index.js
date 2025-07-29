@@ -3,6 +3,19 @@ function toggleMenu() { // menu hamburguesa
     menu.style.display = menu.style.display === "flex" ? "none" : "flex";
   }
 
+  // Cierra el menú al hacer clic fuera
+document.addEventListener("click", function(event) {
+  const menu = document.getElementById("menu");
+  const hamburger = document.querySelector(".hamburger");
+
+  // Si el menú está visible y el clic no fue dentro del menú ni en el botón hamburguesa
+  if (menu.style.display === "flex" &&
+      !menu.contains(event.target) &&
+      !hamburger.contains(event.target)) {
+    menu.style.display = "none";
+  }
+});
+
  // carrusel
 let index = 0;
   const carruselFotos = document.getElementById('carruselFotos');

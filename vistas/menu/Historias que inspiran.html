@@ -15,6 +15,25 @@
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<script>
+  // Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A (a la princesa le gusta el arkanoid) [suscribite a Skycrusher en yt]
+  const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+  let konamiIndex = 0;
+
+  document.addEventListener("keydown", function (e) {
+    if (e.keyCode === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        // Código completado: abrir el juego en una nueva pestaña
+        window.open("../../arkanoid/arkanoid.html", "_blank");
+        konamiIndex = 0; // reiniciar para permitir repetir
+      }
+    } else {
+      konamiIndex = 0; // si falla, reinicia la secuencia
+    }
+  });
+</script>
+
   </head>
   <!-- Página hecha 100% con inteligencia artesanal :D anasheeeee -->
 <header class="header">
@@ -29,12 +48,22 @@
     <div class="container">
       <div class="row">
         <div class="navbar-collapse collapse">
-          <nav class="menu" id="menu">
-            <a href="Nuestra historia.html">NUESTRA HISTORIA</a>
-            <a href="Emprendimientos.html">EMPRENDIMIENTOS</a>
-            <a href="Historias que inspiran.html">HISTORIAS QUE INSPIRAN</a>
-            <a href="Donde estamos.html">DÓNDE ESTAMOS</a>
-          </nav>
+<nav class="menu" id="menu">
+  <a href="Nuestra historia.html">NUESTRA HISTORIA</a>
+  
+  <!-- Emprendimientos con subcategorías -->
+  <div class="dropdown">
+    <a href="#">EMPRENDIMIENTOS</a>
+    <div class="submenu">
+      <a href="../vistas/menu/emprendimientos/Oficios.html">Oficios</a>
+      <a href="../vistas/menu/emprendimientos/Producción.html">Producción</a>
+      <a href="../vistas/menu/emprendimientos/Talleres.html">Talleres</a>
+    </div>
+  </div>
+
+  <a href="Historias que inspiran.html">HISTORIAS QUE INSPIRAN</a>
+  <a href="Donde estamos.html">DÓNDE ESTAMOS</a>
+</nav>
         </div>
       </div>
     </div>

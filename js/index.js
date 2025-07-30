@@ -8,7 +8,7 @@ document.addEventListener("click", function(event) {
   const menu = document.getElementById("menu");
   const hamburger = document.querySelector(".hamburger");
 
-  // Si el menú está visible y el clic no fue dentro del menú ni en el botón hamburguesa
+   //Si el menú está visible y el clic no fue dentro del menú ni en el botón hamburguesa
   if (menu.style.display === "flex" &&
       !menu.contains(event.target) &&
       !hamburger.contains(event.target)) {

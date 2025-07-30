@@ -23,27 +23,36 @@ h3,
 h4,
 .mati h3 strong {
   text-align: center;
+  color: #fff;
 }
 
 h1,
 .mati h3 strong {
   font-size: 2.5rem;
   margin: 20px 0;
+  
 }
 
 header {
-  background-color: #555;
+  background-color: #fff;
   margin: 0;
-  margin-bottom: 5px;
-  padding: 5px;
 }
 
 .header-top {
   position: relative;
-  height: 60px;
+  height: 200px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.header-top h3, h4{
+  color: #000;
+}
+
+.header-top img {
+  height: 150px;
+  width: 300px;
 }
 
 .header-top h1 {
@@ -53,82 +62,36 @@ header {
   text-decoration: none;
 }
 
-.hamburger {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
 h3,
 h4 {
   text-align: center;
   margin: 0.2em 0;
 }
 
-/* MENÚ - Formato de hamburguesa */
-.menu {
-  display: none; /* oculto por defecto para usar JS luego */
-  flex-direction: column;
-  background-color: #333;
-  padding: 10px;
-  list-style: none;
-}
-
-.menu a {
+.main-menu a {
   color: white;
   padding: 10px;
   margin: 0;
   cursor: pointer;
-  border-bottom: 1px solid #444;
   text-align: center;
   text-decoration: none;
 }
 
-.menu a:hover {
+.main-menu a:hover {
   background-color: #555;
   text-decoration: none;
 }
 
-/* Botón hamburguesa */
-.hamburger {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 10px;
-  display: block;
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
-/* Mostrar el menú cuando se activa */
-.menu {
-  display: none;
-  flex-direction: column;
-  background-color: #222;
-  padding: 10px;
-  width: 200px;
-  position: absolute;
-  top: 60px;
-  left: 20px;
-  z-index: 1000;
-  border-radius: 5px;
-}
-
-.menu p {
-  color: #fff;
-  padding: 10px;
-  margin: 0;
-  border-bottom: 1px solid #444;
-  cursor: pointer;
-  text-align: center;
-}
-
-.menu p:hover {
+.main-menu p:hover {
   background-color: #333;
 }
 
@@ -136,9 +99,9 @@ h4 {
 .submenu {
   display: none;
   position: absolute;
-  top: 0;
-  left: 100%;
-  background-color: #222;
+  top: 100%;
+  left: 0;
+  background-color: #000000ef;
   padding: 0;
   border-radius: 5px;
   width: 200px;
@@ -163,7 +126,6 @@ h4 {
   color: white;
   padding: 10px;
   text-decoration: none;
-  border-bottom: 1px solid #444;
   text-align: left;
 }
 
@@ -323,7 +285,7 @@ h4 {
 
 .Lahuella h5 {
   font-size: 1rem;
-  color: #555;
+  color: #f7a309;
   margin-top: 5px;
 }
 
@@ -339,8 +301,6 @@ h4 {
 
 h1,
 h2,
-h3,
-h4,
 h5,
 h6,
 p,
@@ -476,4 +436,68 @@ a {
 
 .educadores {
   background-image: url('../img/50808837-retrato-do-sorridente-masculino-professor-dentro-uma-classe-as-elementar-escola-olhando-as-camera-foto.webp');
+}
+
+
+.mapa {
+  width: 600px;
+  height: 400px;
+  margin: 40px auto;
+  max-width: 800px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.video-ficha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.video-container {
+  flex: 1 1 400px;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ficha {
+  flex: 1 1 300px;
+  background-color: #00000086;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ficha h2 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #dddddd;
+}
+
+.ficha h4 {
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.ficha p {
+  margin-top: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
 }

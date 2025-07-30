@@ -1,5 +1,0 @@
-- desplegar subcategorias en el menu hamburguesa x
-- crear al menos dos vistas mas
-- cargar algunas imagenes
-- modificar estilos de header y vista de nuestra historia
-- crear vista del boton sumate 

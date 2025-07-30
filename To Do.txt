@@ -1,0 +1,5 @@
+- cargar algunas imagenes
+- acomodar carrusel
+- vista galeria
+- vista fundadores
+- donde estamos 

@@ -12,7 +12,6 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-  font-family: "Bebas Neue", sans-serif;
   color: white; /* blanco o algo claro para contrastar */
   
 }
@@ -24,6 +23,7 @@ h4,
 .mati h3 strong {
   text-align: center;
   color: #fff;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 h1,
@@ -77,6 +77,9 @@ h4 {
   text-align: center;
   text-decoration: none;
   font-size: 23px;
+    font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .main-menu a:hover {
@@ -129,6 +132,7 @@ h4 {
   padding: 10px;
   text-decoration: none;
   text-align: left;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .submenu a:hover {
@@ -227,6 +231,8 @@ h4 {
 
 .sumate a {
   width: 100px;
+  font-family: "Bebas Neue", sans-serif;
+  text-decoration: none;
 }
 
 .boton:hover {
@@ -305,8 +311,7 @@ h1,
 h2,
 h5,
 h6,
-p,
-a {
+p {
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* para mayor legibilidad */
   text-decoration: none;
@@ -327,6 +332,11 @@ a {
   margin: auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.3);
+  font-family: "Tinos", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  
 }
 
 .hist h2 {

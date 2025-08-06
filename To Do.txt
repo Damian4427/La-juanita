@@ -1,5 +1,7 @@
 - cargar algunas imagenes
 - acomodar carrusel
-- vista galeria
-- vista fundadores
+- vista galeria grid 5x5
+- vista fundadores 
 - donde estamos 
+
+-

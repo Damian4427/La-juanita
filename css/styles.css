@@ -48,6 +48,7 @@ header {
 }
 .header-top h3, h4{
   color: #000;
+  font-size: 30px;
 }
 
 .header-top img {
@@ -75,6 +76,7 @@ h4 {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+  font-size: 23px;
 }
 
 .main-menu a:hover {

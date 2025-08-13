@@ -1,7 +1,27 @@
-function toggleMenu() { // menu hamburguesa
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("abierto");
   }
+
+  // Control submenús
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function(e) {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        
+        const parent = this.parentElement;
+        const isActive = parent.classList.contains("activo");
+
+        // Cierra todos los demás
+        document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("activo"));
+
+        // Si no estaba activo, lo abre
+        if (!isActive) {
+          parent.classList.add("activo");
+        }
+      }
+    });
+  });
+
 
   // Cierra el menú al hacer clic fuera
 document.addEventListener("click", function(event) {

@@ -12,6 +12,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  font-family: "Bebas Neue", sans-serif;
   color: white; /* blanco o algo claro para contrastar */
   
 }
@@ -23,7 +24,6 @@ h4,
 .mati h3 strong {
   text-align: center;
   color: #fff;
-  font-family: "Bebas Neue", sans-serif;
 }
 
 h1,
@@ -77,9 +77,6 @@ h4 {
   text-align: center;
   text-decoration: none;
   font-size: 23px;
-    font-family: "Tinos", serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .main-menu a:hover {
@@ -132,7 +129,6 @@ h4 {
   padding: 10px;
   text-decoration: none;
   text-align: left;
-  font-family: "Bebas Neue", sans-serif;
 }
 
 .submenu a:hover {
@@ -231,8 +227,6 @@ h4 {
 
 .sumate a {
   width: 100px;
-  font-family: "Bebas Neue", sans-serif;
-  text-decoration: none;
 }
 
 .boton:hover {
@@ -311,7 +305,8 @@ h1,
 h2,
 h5,
 h6,
-p {
+p,
+a {
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* para mayor legibilidad */
   text-decoration: none;
@@ -332,11 +327,6 @@ p {
   margin: auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.3);
-  font-family: "Tinos", serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 20px;
-  
 }
 
 .hist h2 {
@@ -512,4 +502,128 @@ p {
   font-size: 1rem;
   font-family: 'Times New Roman', Times, serif;
   color: #ffffff;
+}
+
+/* Botón hamburguesa oculto en PC */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+@media (max-width: 900px) {
+  /* Encabezado */
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 0;
+  }
+
+  .header-top img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  /* Menú lateral */
+  #sideMenu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    z-index: 2500;
+    overflow-y: auto;
+  }
+
+  #sideMenu.abierto {
+    left: 0;
+  }
+
+  .main-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-menu a {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+    color: white;
+  }
+
+  .submenu {
+    position: relative;
+    background-color: #222;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dropdown.activo .submenu {
+    display: flex;
+  }
+
+
+  /* Colaboradores en filas */
+  .colaboradores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Huella en columnas */
+  .Lahuella {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Carrusel imágenes ajustadas */
+  .carrusel img {
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+  }
+}
+
+/* Carrusel responsive */
+@media (max-width: 768px) {
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Colaboradores grid responsive */
+@media (max-width: 768px) {
+  .colaboradores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .colaboradores-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Breakpoints extra pequeños (ej: iPhone SE) */
+@media (max-width: 375px) {
+  .header-top img {
+    max-width: 100px;
+  }
 }

@@ -3,5 +3,3 @@
 - vista galeria grid 5x5
 - vista fundadores 
 - donde estamos 
-
--hacer que por el amor de los ojos sea reactivo antes de continuar

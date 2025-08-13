@@ -19,51 +19,56 @@
   <!-- Página hecha 100% con inteligencia artesanal :D anasheeeee -->
 <header class="header">
   <div class="header-top">
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     <a href="../../../index.html"><img src="../../../img/logo.png" alt="logo"></a>
-        <h3>"Un faro de dignidad"</h3>
-      <h4>23 años iluminándote el camino.</h4>
-    
+    <h3>"Un faro de dignidad"</h3>
+    <h4>23 años iluminándote el camino.</h4>
   </div>
 
   <section class="menu-section">
-  <div class="container">
-    <nav class="menu" id="menu">
-      <div class="main-menu">
-        <div class="dropdown">
-          <a href="#">NUESTRA HISTORIA</a>
+    <div class="container">
+      <!-- MENÚ ENVUELTO PARA ANIMACIÓN -->
+      <nav class="menu" id="sideMenu">
+        <div class="main-menu cerrado">
+          <div class="dropdown">
+            <a href="#">NUESTRA HISTORIA</a>
             <div class="submenu">
               <a href="../nuestra historia/Quienes somos.html">Quienes somos</a>
               <a href="../nuestra historia/fundadores.html">Fundadores</a>
             </div>
           </div>
           <div class="dropdown">
-          <a href="#">EMPRENDIMIENTOS</a>
-          <div class="submenu">
-            <a href="call center.html">Call Center</a>
-            <a href="panaderia.html">Panaderia</a>
-            <a href="jardin ciel.html">Jardín CieL</a>
-            <a href="oficina.html">Oficina de atención a la comunidad</a>
-            <a href="rus.html">Oficina de RUS</a>
-            <a href="potrero.html">Potrero Digital</a>
-            <a href="textiles.html">Emprendedores Textiles</a>
-          </div>
-          </div>
-          <div class="dropdown">
-          <a href="../vistas/menu/Historias que inspiran.html">EDUCACIÓN</a>
-          <div class="submenu">
-            <a href="../educacion/cursos.html">Cursos de oficios</a>
-          </div>
+            <a href="#">EMPRENDIMIENTOS</a>
+            <div class="submenu">
+              <a href="../emprendimientos/call center.html">Call Center</a>
+              <a href="../emprendimientos/panaderia.html">Panaderia</a>
+              <a href="../emprendimientos/jardin ciel.html">Jardín CieL</a>
+              <a href="../emprendimientos/oficina.html">Oficina de atención a la comunidad</a>
+              <a href="../emprendimientos/rus.html">Oficina de RUS</a>
+              <a href="../emprendimientos/potrero.html">Potrero Digital</a>
+              <a href="../emprendimientos/textiles.html">Emprendedores Textiles</a>
+            </div>
           </div>
           <div class="dropdown">
-          <a href="../vistas/menu/Historias que inspiran.html">HISTORIAS QUE INSPIRAN</a>
-          <div class="submenu">
-            <a href="#">Testimonios</a>
-            <a href="#">Casos de éxito</a>
+            <a href="../vistas/menu/Historias que inspiran.html">EDUCACIÓN</a>
+            <div class="submenu">
+              <a href="#">Cursos de oficios</a>
+            </div>
           </div>
+          <div class="dropdown">
+            <a href="../Historias que inspiran.html">HISTORIAS QUE INSPIRAN</a>
+            <div class="submenu">
+              <a href="#">Testimonios</a>
+              <a href="#">Casos de éxito</a>
+            </div>
           </div>
           <a href="../../menu/Donde estamos.html">DÓNDE ESTAMOS</a>
         </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
+  </section>
+</header>
 
-  </header>
+<script src="../../../js/index.js"></script>

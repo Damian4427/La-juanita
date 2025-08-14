@@ -278,30 +278,25 @@ h4 {
   transform: scale(1.1);
 }
 
-/* LA HUELLA - Datos en fila, texto ordenado */
 .Lahuella {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* espacio entre columnas */
-  padding: 20px;
-  flex-wrap: nowrap; /* siempre en fila */
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .Lahuella ul {
-  list-style: none;
   text-align: center;
-}
-
-.Lahuella h6 {
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin: 10px;
 }
 
 .Lahuella h5 {
-  font-size: 1rem;
-  color: #f7a309;
-  margin-top: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.Lahuella h6 {
+  font-size: 2rem;
+  color: #efae16;
 }
 
 /* Footer */
@@ -632,21 +627,31 @@ a {
   }
 }
 
-/* Colaboradores grid responsive */
+/* Tablets */
+@media (max-width: 1024px) {
+  .mati .colaboradores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Móviles grandes */
 @media (max-width: 768px) {
-  .colaboradores-grid {
-    display: grid;
+  .mati .colaboradores {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 }
 
+/* Móviles pequeños */
 @media (max-width: 480px) {
-  .colaboradores-grid {
+  .mati .colaboradores {
     grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .colaboradores img {
+    height: 50px;
   }
 }
-
 /* Breakpoints extra pequeños (ej: iPhone SE) */
 @media (max-width: 375px) {
   .header-top img {

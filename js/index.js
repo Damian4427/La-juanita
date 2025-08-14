@@ -127,12 +127,26 @@ carruselFotos.addEventListener("touchend", e => {
 actualizarCarrusel();
 
 crearIndicadores();
-
-  const lightbox = GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    zoomable: true,
-    autoplayVideos: true
-  });
   
+// Contadores animados
+document.querySelectorAll('#LaHuella h6').forEach(counter => {
+  const target = counter.getAttribute('data-target'); // número final
+  counter.textContent = '0'; // iniciar en 0
+  const duration = 2000; // duración total en ms
+  let startTime = null; 
+
+  // Función de animación
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = timestamp - startTime;
+    const current = Math.min(Math.floor((progress / duration) * target), target);
+    counter.textContent = current;
+    if (progress < duration) {
+      requestAnimationFrame(animate);
+    } else {
+      counter.textContent = target; // asegurar valor final exacto
+    }
+  }
+
+  requestAnimationFrame(animate);
+});

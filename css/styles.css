@@ -5,7 +5,8 @@
 }
 
 body {
-  background-image: url("../img/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg"); /* Cambiá esta ruta si es necesario */
+  /*background-image: url("../img/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg"); /* Cambiá esta ruta si es necesario */
+  background: linear-gradient(to right, rgb(106, 10, 150)15%, green, orange );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -150,17 +151,28 @@ h4 {
 .carrusel-fotos {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 25.5%; /* 5 imágenes => 100% x 5 */
+  width: 25%; /* que ocupe siempre todo */
 }
 
 .carrusel {
-  flex: 0 0 100%;
+  flex: 0 0 100%; /* cada imagen ocupa el 100% del contenedor */
 }
 
 .carrusel img {
   width: 100%;
-  height: auto;
+  height: 60vh; /* ajusta a alto relativo a la pantalla */
+  max-height: 500px; /* límite en grandes pantallas */
+  object-fit: cover; /* recorta para llenar el espacio sin deformar */
   display: block;
+  background-color: #000; /* fondo para zonas vacías si no llena */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 250px;
+}
+
+.carrusel img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 /* Botones */
@@ -241,7 +253,7 @@ h4 {
   margin: 30px 0;
 }
 
-.colaboradores {
+.mati .colaboradores {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, auto);
@@ -250,20 +262,20 @@ h4 {
   text-align: center;
 }
 
-.colaboradores a {
-  display: block;
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  transition: background-color 0.3s;
+.colaboradores img {
+  height: 60px; /* ajusta el tamaño */
+  width: auto;  /* mantiene proporción */
+  vertical-align: middle;
+  transition: transform 0.3s ease;
 }
 
-.colaboradores a:hover {
-  background-color: #e0e0e0;
+.mati .colaboradores a {
+  display: inline-block;
+  margin: 10px;
+}
+
+.colaboradores img:hover {
+  transform: scale(1.1);
 }
 
 /* LA HUELLA - Datos en fila, texto ordenado */
@@ -442,14 +454,27 @@ a {
 }
 
 
-.mapa {
-  width: 600px;
-  height: 400px;
-  margin: 40px auto;
-  max-width: 800px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
+.mapa-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.mapa-container iframe {
+  flex: 1 1 500px;
+  max-width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+.mapa-container h1 {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -658,5 +683,19 @@ a {
   }
   .Lahuella {
     gap: 10px; /* menos espacio entre columnas */
+  }
+}
+
+@media (max-width: 768px) {
+  .carrusel img {
+    height: 40vh;   /* menos alto en tablets/móviles */
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrusel img {
+    height: 35vh;   /* aún más compacto en pantallas muy chicas */
+    max-height: 250px;
   }
 }

@@ -112,5 +112,27 @@ function moverACarrusel(indice) {
   actualizarIndicadores();
 }
 
+// Swipe para móviles
+let startX = 0;
+carruselFotos.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+carruselFotos.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) moverCarrusel(1); // izquierda
+  if (endX - startX > 50) moverCarrusel(-1); // derecha
+});
+
+actualizarCarrusel();
+
 crearIndicadores();
+
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true,
+    autoplayVideos: true
+  });
   

@@ -1,5 +1,2 @@
-- cargar algunas imagenes
-- acomodar carrusel
 - vista galeria grid 5x5
-- vista fundadores 
-- donde estamos 
+videos subtitulados y nombres y cargos fijos

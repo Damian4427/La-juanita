@@ -23,19 +23,18 @@
   });
 
 
-  // Cierra el menú al hacer clic fuera
-document.addEventListener("click", function(event) {
-  const menu = document.getElementById("menu");
-  const hamburger = document.querySelector(".hamburger");
+const menu = document.getElementById("sideMenu");
+const hamburger = document.getElementById("hamburgerBtn");
 
-   //Si el menú está visible y el clic no fue dentro del menú ni en el botón hamburguesa
-  if (menu.style.display === "flex" &&
-      !menu.contains(event.target) &&
+document.addEventListener("click", function(event) {
+  // Verificar si el menú está abierto usando classList
+  if (menu.classList.contains("abierto") && 
+      !menu.contains(event.target) && 
       !hamburger.contains(event.target)) {
-    menu.style.display = "none";
+    menu.classList.remove("abierto");
+    menu.classList.add("cerrado");
   }
 });
-
  // carrusel
 let index = 0;
   const carruselFotos = document.getElementById('carruselFotos');

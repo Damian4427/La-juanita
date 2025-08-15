@@ -875,3 +875,52 @@ header {
     border-radius: 20px;
   }
 }
+
+/* --- RESPONSIVE PARA SECCIÓN SUMATEX --- */
+@media (max-width: 1024px) {
+  .sumatex {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+  }
+  .colaboracion {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sumatex {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    height: auto;
+  }
+  .colaboracion {
+    padding: 20px;
+  }
+  .donar, .voluntario, .productos, .educadores {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sumatex {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .colaboracion {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .colaboracion h3 {
+    font-size: 1.3rem;
+  }
+  .colaboracion p {
+    font-size: 0.95rem;
+  }
+  .botonx {
+    font-size: 1.1rem;
+    padding: 8px 12px;
+  }
+}

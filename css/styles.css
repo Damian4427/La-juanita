@@ -1,3 +1,6 @@
+/* =========================
+   RESET Y GENERALES
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -15,25 +18,35 @@ body {
   padding: 0;
   font-family: "Bebas Neue", sans-serif;
   color: white; /* blanco o algo claro para contrastar */
-  
 }
 
-/* Titulares centrados */
-h1,
-h3,
-h4,
-.mati h3 strong {
+/* =========================
+   TIPOGRAFÍA Y TITULARES
+   ========================= */
+h1, h3, h4, .mati h3 strong {
   text-align: center;
   color: #fff;
 }
 
-h1,
-.mati h3 strong {
+h1, .mati h3 strong {
   font-size: 2.5rem;
   margin: 20px 0;
-  
 }
 
+h3, h4 {
+  text-align: center;
+  margin: 0.2em 0;
+}
+
+h1, h2, h5, h6, p, a {
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* para mayor legibilidad */
+  text-decoration: none;
+}
+
+/* =========================
+   HEADER Y MENÚ
+   ========================= */
 header {
   background-color: #fff;
   margin: 0;
@@ -47,7 +60,8 @@ header {
   justify-content: space-evenly;
   flex-direction: row;
 }
-.header-top h3, h4{
+
+.header-top h3, h4 {
   color: #000;
   font-size: 30px;
 }
@@ -64,10 +78,27 @@ header {
   text-decoration: none;
 }
 
-h3,
-h4 {
-  text-align: center;
-  margin: 0.2em 0;
+/* Botón hamburguesa oculto en PC */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+/* =========================
+   MENÚ PRINCIPAL Y SUBMENÚS
+   ========================= */
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .main-menu a {
@@ -83,15 +114,6 @@ h4 {
 .main-menu a:hover {
   background-color: #555;
   text-decoration: none;
-}
-
-.main-menu {
-  display: flex;
-  flex-direction: row;
-  background-color: #333;
-  padding: 20px;
-  width: 100%;
-  justify-content: space-evenly;
 }
 
 .main-menu p:hover {
@@ -119,7 +141,6 @@ h4 {
   flex-direction: column;
 }
 
-/* Mostrar submenu al pasar el mouse */
 .dropdown:hover .submenu {
   display: flex;
 }
@@ -136,6 +157,9 @@ h4 {
   background-color: #555;
 }
 
+/* =========================
+   CARRUSEL
+   ========================= */
 .just-sec {
   /* inicio carrusel*/
   width: 100%;
@@ -217,9 +241,9 @@ h4 {
   background-color: #333;
 }
 
-/* fin carrusel */
-
-/* Botón SUMATE */
+/* =========================
+   BOTÓN SUMATE
+   ========================= */
 .boton {
   background-color: yellow;
   color: black;
@@ -246,7 +270,9 @@ h4 {
   color: yellow;
 }
 
-/* MATI - colaboradores Título centrado y enlaces en grid */
+/* =========================
+   COLABORADORES (MATI)
+   ========================= */
 .mati h3 strong {
   display: block;
   font-size: 2.5rem;
@@ -278,6 +304,9 @@ h4 {
   transform: scale(1.1);
 }
 
+/* =========================
+   LA HUELLA
+   ========================= */
 .Lahuella {
   display: flex;
   justify-content: space-around;
@@ -299,7 +328,9 @@ h4 {
   color: #efae16;
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+   ========================= */
 .disclaimer {
   text-align: center;
   padding: 20px;
@@ -309,17 +340,9 @@ h4 {
   font-size: 0.9rem;
 }
 
-h1,
-h2,
-h5,
-h6,
-p,
-a {
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* para mayor legibilidad */
-  text-decoration: none;
-}
-
+/* =========================
+   HISTORIA Y FICHAS
+   ========================= */
 .hist h1 {
   margin: 0;
   font-size: 2.5rem;
@@ -366,7 +389,9 @@ a {
   color: #007b55;
 }
 
-
+/* =========================
+   SUMATEX Y COLABORACIÓN
+   ========================= */
 .sumatex {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -431,7 +456,6 @@ a {
   color: yellow;
 }
 
-
 .donar {
   background-image: url('../img/voluntariado-en-mexico-1-1200x800.webp');
 }
@@ -448,7 +472,9 @@ a {
   background-image: url('../img/50808837-retrato-do-sorridente-masculino-professor-dentro-uma-classe-as-elementar-escola-olhando-as-camera-foto.webp');
 }
 
-
+/* =========================
+   MAPA
+   ========================= */
 .mapa-container {
   display: flex;
   gap: 10px;
@@ -472,7 +498,9 @@ a {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-
+/* =========================
+   VIDEO Y FICHA
+   ========================= */
 .video-ficha {
   display: flex;
   flex-wrap: wrap;
@@ -525,19 +553,44 @@ a {
   color: #ffffff;
 }
 
-/* Botón hamburguesa oculto en PC */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #000;
-  cursor: pointer;
-  z-index: 3000;
+/* =========================
+   GALERÍA GRID
+   ========================= */
+.galeria-grid {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  width: 90vw;
+  max-width: 1200px;
+}
+
+.grid-container img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.grid-container img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+
+/* --- HEADER Y MENÚ --- */
 @media (max-width: 900px) {
-  /* Encabezado */
   .header-top {
     display: flex;
     align-items: center;
@@ -598,7 +651,6 @@ a {
     display: flex;
   }
 
-
   /* Colaboradores en filas */
   .colaboradores {
     grid-template-columns: repeat(2, 1fr);
@@ -619,30 +671,30 @@ a {
   }
 }
 
-/* Carrusel responsive */
-@media (max-width: 768px) {
-  .carousel img {
-    width: 100%;
-    height: auto;
+/* --- GALERÍA GRID RESPONSIVE --- */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Tablets */
+/* --- COLABORADORES RESPONSIVE --- */
 @media (max-width: 1024px) {
   .mati .colaboradores {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* Móviles grandes */
 @media (max-width: 768px) {
   .mati .colaboradores {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 }
-
-/* Móviles pequeños */
 @media (max-width: 600px) {
   .mati .colaboradores {
     grid-template-columns: 1fr;
@@ -652,33 +704,8 @@ a {
     height: 50px;
   }
 }
-/* Breakpoints extra pequeños (ej: iPhone SE) */
-@media (max-width: 375px) {
-  .header-top img {
-    max-width: 100px;
-  }
-}
 
-/* Para tablets y celulares */
-@media (max-width: 768px) {
-  .header-top h3 {
-    font-size: 1.2rem; /* más pequeño */
-  }
-  .header-top h4 {
-    font-size: 0.9rem;
-  }
-}
-
-/* Para celulares muy pequeños */
-@media (max-width: 480px) {
-  .header-top h3 {
-    font-size: 1rem;
-  }
-  .header-top h4 {
-    font-size: 0.8rem;
-  }
-}
-
+/* --- LA HUELLA RESPONSIVE --- */
 @media (max-width: 600px) {
   .Lahuella h6 {
     font-size: 1.2rem;
@@ -691,13 +718,40 @@ a {
   }
 }
 
+/* --- HEADER TEXTOS RESPONSIVE --- */
 @media (max-width: 768px) {
+  .header-top h3 {
+    font-size: 1.2rem; /* más pequeño */
+  }
+  .header-top h4 {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .header-top h3 {
+    font-size: 1rem;
+  }
+  .header-top h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 375px) {
+  .header-top img {
+    max-width: 100px;
+  }
+}
+
+/* --- CARRUSEL RESPONSIVE --- */
+@media (max-width: 768px) {
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
   .carrusel img {
     height: 40vh;   /* menos alto en tablets/móviles */
     max-height: 300px;
   }
 }
-
 @media (max-width: 480px) {
   .carrusel img {
     height: 35vh;   /* aún más compacto en pantallas muy chicas */

@@ -1,2 +1,3 @@
-- vista galeria grid 5x5
 videos subtitulados y nombres y cargos fijos
+
+

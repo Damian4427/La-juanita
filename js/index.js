@@ -59,7 +59,8 @@ function actualizarCarruselCoverflow() {
 
 // Slider tradicional para PC
 function actualizarCarrusel() {
-  carruselFotos.style.transform = `translateX(-${index * 100}%)`;
+  // Mueve el carrusel en múltiplos de 100/12 por cada grupo de 4
+  carruselFotos.style.transform = `translateX(-${(index * 100) / totalSlides}%)`;
 }
 
 // Decide qué modo usar según pantalla
@@ -78,7 +79,16 @@ function actualizarCarruselResponsive() {
 
 // Mover carrusel
 function moverCarrusel(direccion) {
-  index = (index + direccion + totalSlides) % totalSlides;
+  if (window.innerWidth > 900) {
+    // PC: Avanza de a 4 (0, 4, 8, vuelve a 0)
+    const maxIndex = totalSlides - cantidadVisible; // 12 - 4 = 8
+    index += direccion * cantidadVisible;
+    if (index > maxIndex) index = 0;
+    if (index < 0) index = maxIndex;
+  } else {
+    // Coverflow móvil/tablet, avanza de a 1
+    index = (index + direccion + totalSlides) % totalSlides;
+  }
   actualizarCarruselResponsive();
   reiniciarAuto();
   actualizarIndicadores();

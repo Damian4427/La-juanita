@@ -1,4 +1,4 @@
-  function toggleMenu() {
+function toggleMenu() {
     document.getElementById("sideMenu").classList.toggle("abierto");
   }
 
@@ -36,35 +36,67 @@ document.addEventListener("click", function(event) {
   }
 });
  // carrusel
+// --- Carrusel Coverflow Adaptativo ---
 let index = 0;
-  const carruselFotos = document.getElementById('carruselFotos');
-  const totalSlides = document.querySelectorAll('.carrusel').length;
+const carruselFotos = document.getElementById('carruselFotos');
+const totalSlides = document.querySelectorAll('.carrusel').length;
+let auto = null;
 
-  function actualizarCarrusel() {
-    carruselFotos.style.transform = `translateX(-${index * 100}%)`;
-  }
+// Coverflow: asigna clases para móvil/tablet
+function actualizarCarruselCoverflow() {
+  const carruseles = document.querySelectorAll('.carrusel');
+  carruseles.forEach((el, i) => {
+    el.classList.remove('activa', 'lateral-izq', 'lateral-der');
+    if (i === index) {
+      el.classList.add('activa');
+    } else if (i === (index - 1 + totalSlides) % totalSlides) {
+      el.classList.add('lateral-izq');
+    } else if (i === (index + 1) % totalSlides) {
+      el.classList.add('lateral-der');
+    }
+  });
+}
 
-  function moverCarrusel(direccion) {
-    index = (index + direccion + totalSlides) % totalSlides;
+// Slider tradicional para PC
+function actualizarCarrusel() {
+  carruselFotos.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Decide qué modo usar según pantalla
+function actualizarCarruselResponsive() {
+  if (window.innerWidth <= 900) {
+    actualizarCarruselCoverflow();
+    carruselFotos.style.transform = ""; // quita el translateX
+  } else {
+    // Quita clases coverflow
+    document.querySelectorAll('.carrusel').forEach(el => {
+      el.classList.remove('activa', 'lateral-izq', 'lateral-der');
+    });
     actualizarCarrusel();
-    reiniciarAuto();
   }
+}
 
-  // Auto avance
-  let auto = setInterval(() => {
+// Mover carrusel
+function moverCarrusel(direccion) {
+  index = (index + direccion + totalSlides) % totalSlides;
+  actualizarCarruselResponsive();
+  reiniciarAuto();
+  actualizarIndicadores();
+}
+
+// Auto avance
+function iniciarAuto() {
+  auto = setInterval(() => {
     moverCarrusel(1);
   }, 5000);
+}
+function reiniciarAuto() {
+  clearInterval(auto);
+  iniciarAuto();
+}
 
-  // Reset automático si el usuario toca los botones
-  function reiniciarAuto() {
-    clearInterval(auto);
-    auto = setInterval(() => {
-      moverCarrusel(1);
-    }, 15000);
-  }
-
+// Indicadores (igual que antes)
 const carruselIndicadores = document.getElementById('carruselIndicadores');
-
 let slideActual = 0;
 const cantidadVisible = 4; // ajustar si mostrás más de una foto a la vez
 
@@ -86,28 +118,15 @@ function actualizarIndicadores() {
   for (let i = 0; i < dots.length; i++) {
     dots[i].classList.remove('activo');
   }
-  const indexActivo = Math.floor(slideActual / cantidadVisible);
+  const indexActivo = Math.floor(index / cantidadVisible);
   if (dots[indexActivo]) {
     dots[indexActivo].classList.add('activo');
   }
 }
 
-function moverCarrusel(direccion) {
-  slideActual += direccion * cantidadVisible;
-  if (slideActual >= totalSlides) {
-    slideActual = 0;
-  } else if (slideActual < 0) {
-    slideActual = totalSlides - cantidadVisible;
-    if (slideActual < 0) slideActual = 0;
-  }
-
-  carruselFotos.style.transform = `translateX(-${slideActual * 100}%)`;
-  actualizarIndicadores();
-}
-
 function moverACarrusel(indice) {
-  slideActual = indice * cantidadVisible;
-  carruselFotos.style.transform = `translateX(-${slideActual * 100}%)`;
+  index = indice * cantidadVisible;
+  actualizarCarruselResponsive();
   actualizarIndicadores();
 }
 
@@ -116,17 +135,20 @@ let startX = 0;
 carruselFotos.addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
 });
-
 carruselFotos.addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
   if (startX - endX > 50) moverCarrusel(1); // izquierda
   if (endX - startX > 50) moverCarrusel(-1); // derecha
 });
 
-actualizarCarrusel();
+// Inicialización
+window.addEventListener('resize', actualizarCarruselResponsive);
+document.addEventListener('DOMContentLoaded', () => {
+  actualizarCarruselResponsive();
+  crearIndicadores();
+  iniciarAuto();
+});
 
-crearIndicadores();
-  
 // Contadores animados
 document.querySelectorAll('#LaHuella h6').forEach(counter => {
   const target = counter.getAttribute('data-target'); // número final
